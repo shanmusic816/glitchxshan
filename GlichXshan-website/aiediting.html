@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Editing Prompts | GlitchXshan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  background:#020617;
+  color:#e5e7eb;
+  font-family:Arial, sans-serif;
+  padding:20px;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.prompt-box{
+  background:#020617;
+  border:1px solid #1e293b;
+  border-radius:10px;
+  padding:15px;
+  margin-bottom:25px;
+  position:relative;
+}
+
+.prompt-box pre{
+  font-size:14px;
+  line-height:1.6;
+  white-space:pre-wrap;
+  max-height:240px;
+  overflow-y:auto;
+}
+
+.copy-btn{
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:#38bdf8;
+  border:none;
+  padding:6px 10px;
+  border-radius:6px;
+  font-size:12px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🤖 AI Editing Prompts</h1>
+
+<div class="prompt-box">
+<button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+<pre>
+Ultra realistic cinematic portrait of a young man,
+dramatic neon blue and purple lighting,
+dark background,
+DSLR photography,
+4K ultra HD quality
+</pre>
+</div>
+
+<div class="prompt-box">
+<button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+<pre>
+Dark aesthetic male portrait,
+black hoodie,
+low light cinematic shadows,
+moody look,
+Instagram aesthetic style
+</pre>
+</div>
+
+<div class="prompt-box">
+<button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+<pre>
+Futuristic cyberpunk character,
+glowing neon eyes,
+sci-fi environment,
+high detail,
+8K realistic render
+</pre>
+</div>
+
+<script>
+function copyPrompt(btn){
+  let text = btn.nextElementSibling.innerText;
+  navigator.clipboard.writeText(text);
+  btn.innerText = "Copied!";
+  setTimeout(()=>btn.innerText="Copy",1500);
+}
+</script>
+
+</body>
+</html>
