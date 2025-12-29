@@ -1,16 +1,30 @@
-// Text Slider Script for GlitchXshan Website
+document.addEventListener("DOMContentLoaded", function () {
 
-let slides = document.querySelectorAll(".slide");
-let currentSlide = 0;
+  /* ===== POPUP CODE ===== */
+  const popup = document.getElementById("popup");
+  const closeBtn = document.getElementById("closePopup");
 
-// Pehle sab hide karo
-slides.forEach(slide => slide.style.display = "none");
+  if (popup && closeBtn) {
+    popup.style.display = "flex";
 
-// Pehla slide dikhao
-slides[0].style.display = "block";
+    closeBtn.addEventListener("click", function () {
+      popup.style.display = "none";
+    });
+  }
 
-setInterval(() => {
-  slides[currentSlide].style.display = "none";
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].style.display = "block";
-}, 2500); // 2.5 seconds
+  /* ===== SLIDER CODE ===== */
+  let slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+
+  if (slides.length > 0) {
+    slides.forEach(slide => slide.style.display = "none");
+    slides[0].style.display = "block";
+
+    setInterval(() => {
+      slides[currentSlide].style.display = "none";
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].style.display = "block";
+    }, 2500);
+  }
+
+});
